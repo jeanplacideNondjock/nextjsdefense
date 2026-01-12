@@ -1,0 +1,279 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+
+  padding-top: 80px;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.no-round {
+  border-radius: 0 !important;
+}
+
+.no-space > * {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.contact-section input,
+.contact-section textarea,
+.contact-section button {
+  border-radius: 0 !important;
+}
+
+/* Pour coller les sections */
+section + section {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+
+.outdoor-growers-section {
+  background: #f6f9f5;
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid #d5e4d9;
+  text-align: center;
+  max-width: 800px;
+  margin: 1rem auto;
+}
+
+.og-content h2 {
+  font-size: 2rem;
+  color: #1d4a2e;
+  margin-bottom: 0.75rem;
+}
+
+.og-content p {
+  font-size: 1rem;
+  color: #4a5d4d;
+  margin-bottom: 1rem;
+}
+
+.og-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #2d6a3a;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.og-button:hover {
+  background: #234f2d;
+}
+/* Navigation.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Première ligne de navigation */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 10px;
+}
+
+.company-name {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a365d;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    position: relative;
+}
+
+.nav-item {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4a5568;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: color 0.3s;
+    position: relative;
+    padding: 5px 0;
+}
+
+.nav-item:hover {
+    color: #2d3748;
+}
+
+.nav-item::after {
+    content: '~';
+    margin-left: 5px;
+    color: #a0aec0;
+}
+
+.nav-item:last-child::after {
+    content: '';
+}
+
+/* Dropdown pour toutes les rubriques */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 220px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    z-index: 100;
+    border-radius: 4px;
+    padding: 10px 0;
+    margin-top: 5px;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-item {
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #4a5568;
+    text-transform: none;
+    letter-spacing: normal;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-left: 3px solid transparent;
+}
+
+.dropdown-item:hover {
+    background-color: #f7fafc;
+    color: #2d3748;
+    padding-left: 25px;
+}
+
+/* Couleurs spécifiques pour chaque dropdown */
+.solutions-dropdown .dropdown-item:hover {
+    border-left-color: #4299e1; /* Bleu */
+}
+
+.technology-dropdown .dropdown-item:hover {
+    border-left-color: #48bb78; /* Vert */
+}
+
+.company-dropdown .dropdown-item:hover {
+    border-left-color: #ed8936; /* Orange */
+}
+
+.news-dropdown .dropdown-item:hover {
+    border-left-color: #9f7aea; /* Violet */
+}
+
+.client-dropdown .dropdown-item:hover {
+    border-left-color: #f56565; /* Rouge */
+}
+
+/* Indicateur dropdown (flèche) */
+.dropdown-indicator {
+    display: inline-block;
+    margin-left: 3px;
+    font-size: 10px;
+    vertical-align: middle;
+}
+
+/* Titres des dropdowns */
+.dropdown-title {
+    padding: 12px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #2d3748;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 5px;
+}
+
+/* Deuxième ligne avec le mot Biosignals */
+.biosignals-section {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.biosignals-text {
+    font-size: 36px;
+    font-weight: 300;
+    color: #2d3748;
+    letter-spacing: 2px;
+}
+
+/* Style pour la version responsive */
+@media (max-width: 768px) {
+    .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+    
+    .dropdown {
+        width: 100%;
+    }
+    
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        margin-top: 10px;
+        margin-left: 20px;
+        width: calc(100% - 40px);
+    }
+    
+    .biosignals-text {
+        font-size: 28px;
+    }
+}
