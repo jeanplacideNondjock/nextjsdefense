@@ -809,7 +809,7 @@ const Footer: React.FC = () => {
                   <span>afriquenotreterre@gmail.com</span>
                 </a>
                 
-                <a href="tel:+33123456789" className="contact-item">
+                <a href="tel:+237655019080" className="contact-item">
                   <MdPhone className="contact-icon" />
                   <span>+237 655019080</span>
                 </a>

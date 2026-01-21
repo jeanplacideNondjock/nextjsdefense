@@ -28,8 +28,8 @@ export default function HomePage() {
 
         {/* Contenu principal */}
         <main>
-          <Navbar/>
-          <HeroPremium />
+          {/* <Navbar/> */}
+          {/* <HeroPremium /> */}
           <ImpactStats />
           <UseCasesSection />
           <SolutionsCarouselSection />

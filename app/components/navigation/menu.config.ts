@@ -2,7 +2,7 @@ export const menuItems = [
   {
     label: "Solutions",
     children: [
-      { label: "Academics & Scientists", href: "/solutions/academics&scientists" },
+      { label: "Academics & Acientists", href: "/solutions/academics&scientists" },
       { label: "Indoor growers", href: "/solutions/indoor-growers" },
       { label: "Food & inputs supplier", href: "/solutions/food-ag-input-supplier" }, 
       {label: "Outdoor growers", href: "/solutions/outdoor-growers"}
