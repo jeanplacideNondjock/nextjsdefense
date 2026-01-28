@@ -1,20 +1,9 @@
 import type { Metadata } from "next";
-import SolutionsCarouselSection from "./solutions/SolutionsCarouselSection";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from "./components/navigation/Header";
-import "./globals.css";
-import HeroPremium from "./components/hero/HeroPremium";
-import ImpactStats from "./components/heroimpacttime/ImpactStats";
-import UseCasesSection from "./components/section/UseCasesSection";
- import SolutionsSection from "./components/section/SolutionsSection";
- import IndustriesRow from "./solutions/IndustriesRow";
-import PlatformLiveSection from "./components/section/PlatformLiveSection";
-import HowItWorksSection from "./components/section/HowItWorksSection";
-import StatsWithCardsSection from "./components/StatsWithCardsSection";
 import Footer from "./components/footer/Footer";
-import Navbar from "./components/navbar/Navbar";
-
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,19 +31,13 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          {/* <Navbar/> */}
-          <HowItWorksSection/>
-           <IndustriesRow/>
-           <Header /> 
-          <HeroPremium/> 
+          {/* SEULEMENT les éléments communs à toutes les pages */}
+          <Header/>
           
-          <SolutionsCarouselSection/>
-          <PlatformLiveSection/>
-           <StatsWithCardsSection/>
-          <ImpactStats/>
-          <UseCasesSection/> 
-          <main className="pt-16">{children}</main>
-          <Footer/>
+          {/* Le contenu spécifique à chaque page ira ici */}
+          <main className="min-h-screen">{children}</main>
+          
+          <Footer />
         </body>
       </html>
     </ClerkProvider>

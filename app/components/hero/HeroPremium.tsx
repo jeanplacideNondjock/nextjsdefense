@@ -1,19 +1,21 @@
-"use client";
+// components/sections/HeroViventStyle.tsx
+'use client';
 
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { ArrowRight, Play } from "lucide-react";
 
-export default function HeroPremium() {
+export default function HeroViventStyle() {
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative min-h-screen w-full overflow-hidden flex items-center justify-center">
 
-      {/* 1️⃣ Background animé */}
+      {/* Background image avec animation subtile */}
       <motion.div
         initial={{ scale: 1 }}
-        animate={{ scale: 1.08 }}
+        animate={{ scale: 1.05 }}
         transition={{
-          duration: 20,
+          duration: 25,
           ease: "linear",
           repeat: Infinity,
           repeatType: "mirror",
@@ -22,70 +24,107 @@ export default function HeroPremium() {
       >
         <Image
           src="/hero/hero-agriculture.jpg"
-          alt="Sustainable agriculture technology"
+          alt="Sustainable agriculture technology in Africa"
           fill
           priority
+          sizes="100vw"
           className="object-cover"
         />
       </motion.div>
 
-      {/* 2️⃣ Overlay animé (gradient respirant) */}
-      <motion.div
-        initial={{ opacity: 0.55 }}
-        animate={{ opacity: 0.75 }}
-        transition={{
-          duration: 6,
-          ease: "easeInOut",
-          repeat: Infinity,
-          repeatType: "mirror",
-        }}
-        className="absolute inset-0 `bg-gradient-to-r from-black/70 via-black/40 to-transparent"
-      />
+      {/* Overlay avec gradient */}
+      <div className="absolute inset-0 `bg-gradient-to-r from-gray-900/85 via-gray-900/70 to-transparent" />
+      <div className="absolute inset-0 `bg-gradient-to-t from-gray-900/30 via-transparent to-gray-900/20" />
 
-      {/* 3️⃣ Contenu */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex items-center">
+      {/* Contenu principal - CENTRÉ */}
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
-            duration: 0.9,
+            duration: 0.8,
             ease: [0.22, 1, 0.36, 1],
           }}
-          className="max-w-xl"
+          className="text-center"
         >
-          <p className="text-emerald-400 text-sm uppercase tracking-widest mb-4">
-            Agricultural Intelligence Platform
-          </p>
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-10">
+            <span className="text-sm text-white font-medium tracking-widest">
+              AFRICA NATURE INITIATIVE
+            </span>
+          </div>
 
-          <h1 className="text-white text-4xl md:text-6xl font-semibold leading-tight mb-6">
-            Data-driven agriculture for a sustainable future
+          {/* Titre principal */}
+          <h1 className="text-white text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 leading-tight">
+            <span className="block">Agriculture Durable</span>
+            <span className="block text-emerald-400 mt-4">& Sécurité Alimentaire</span>
           </h1>
 
-          <p className="text-slate-200 text-lg mb-8">
-            We combine advanced sensing, AI and biological intelligence
-            to help farmers, institutions and governments make better decisions.
+          {/* Sous-titre */}
+          <p className="text-gray-200 text-xl md:text-2xl mb-12 leading-relaxed max-w-3xl mx-auto">
+            Des solutions innovantes pour transformer l&apos;agriculture africaine 
+            vers plus de durabilité et de résilience.
+            <span className="block mt-6 text-lg text-emerald-300 font-medium">
+              Africa Nature - Cultivons l&apos;avenir ensemble
+            </span>
           </p>
 
-          <div className="flex items-center gap-4">
+          {/* CTA Buttons - BOUTONS PLUS CONSEQUENTS */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Link
-              href="/solutions"
-              className="px-6 py-3 rounded-xl bg-emerald-600 text-white font-medium hover:bg-emerald-700 transition"
+              href="/solutions/"
+              className="group inline-flex items-center justify-center gap-3 px-12 py-5 bg-emerald-600 text-white text-lg font-semibold rounded-xl hover:bg-emerald-700 transition-all duration-300 shadow-2xl hover:shadow-3xl hover:scale-105 active:scale-95 min-w-[250px]"
             >
-              Explore solutions
+              <span>Découvrir nos solutions</span>
+              <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
             </Link>
+            
+            <Link
+              href="/contact"
+              className="group inline-flex items-center justify-center gap-3 px-12 py-5 bg-white/10 backdrop-blur-lg text-white text-lg font-semibold rounded-xl border-2 border-white/30 hover:bg-white/20 hover:border-white/50 transition-all duration-300 hover:scale-105 active:scale-95 min-w-[250px]"
+            >
+              <span>Nous contacter</span>
+              <Play className="w-5 h-5" />
+            </Link>
+          </div>
 
-            <Link
-              href="/technology"
-              className="px-6 py-3 rounded-xl border border-white/40 text-white hover:bg-white/10 transition"
-            >
-              Our technology
-            </Link>
+          {/* Quick stats - PLUS VISIBLE */}
+          <div className="grid grid-cols-3 gap-8 mt-20 pt-12 border-t border-white/20 max-w-2xl mx-auto">
+            {[
+              { value: '500K+', label: 'Agriculteurs formés' },
+              { value: '40%', label: 'Économie d\'eau' },
+              { value: '15+', label: 'Pays partenaires' },
+            ].map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.value}</div>
+                <div className="text-gray-300 text-sm md:text-base">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>
 
-      {/* 4️⃣ Fade bas */}
-      <div className="absolute bottom-0 inset-x-0 h-32 `bg-gradient-to-t from-white to-transparent" />
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1 }}
+        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20"
+      >
+        <div className="flex flex-col items-center">
+          <span className="text-xs text-gray-300 mb-3 tracking-wider font-medium">
+            EXPLORER
+          </span>
+          <motion.div
+            animate={{ y: [0, 12, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="w-px h-16 `bg-gradient-to-b from-emerald-400 via-emerald-300 to-transparent"
+          />
+        </div>
+      </motion.div>
+
+      {/* Bottom gradient fade */}
+      <div className="absolute bottom-0 inset-x-0 h-40 `bg-gradient-to-t from-gray-900 to-transparent" />
     </section>
   );
 }

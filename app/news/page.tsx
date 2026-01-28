@@ -149,7 +149,7 @@ export default function NewsMediaPage() {
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link href="/" className="text-2xl font-bold text-green-700 flex items-center gap-2">
             <div className="w-8 h-8 bg-green-600 rounded-lg"></div>
-            Vivent Dans
+            
           </Link>
           <div className="space-x-6">
             <Link href="/" className="hover:text-green-600">Accueil</Link>
